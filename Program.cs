@@ -114,9 +114,9 @@ namespace Variable_HUD
             int enemyPoints = 100;
             float pointsGainedFloat = enemyPoints * multiplier;
             int pointsGainedInt = (int)pointsGainedFloat;
+            ScoreIncrease(pointsGainedInt);
 
             Console.WriteLine(name + " killed an enemy and gained " + pointsGainedInt + " points!");
-            score += pointsGainedInt;
             killcount++;
 
             Random rnd = new Random();
@@ -131,6 +131,11 @@ namespace Variable_HUD
             {
                 NextLevel();
             }
+        }
+        static void ScoreIncrease(int points)
+        {
+            float pointsGainedFloat = points * multiplier;
+            int pointsGainedInt = (int)pointsGainedFloat;
         }
         static void IncreaseMultiplier()
         {
